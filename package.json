@@ -11,7 +11,7 @@
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\" --tab-width 4",
     "lint": "tslint -p tsconfig.json",
-    "postinstall": "npm run build"
+    "postinstall": "tsc -p tsconfig.json"
   },
   "repository": "git+https://github.com/Androz2091/discord-temp-channels.git",
   "author": "Androz2091 <androz2091@gmail.com>",
