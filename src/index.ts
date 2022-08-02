@@ -1,4 +1,4 @@
-import { Client, VoiceChannel, Snowflake, Intents } from "discord.js";
+import { Client, VoiceChannel, Snowflake, IntentsBitField } from "discord.js";
 import { EventEmitter } from "events";
 
 import { ParentChannelData, ParentChannelOptions } from "./types";
@@ -12,7 +12,7 @@ class TempChannelsManager extends EventEmitter {
     constructor(client: Client) {
         super();
 
-        if (!new Intents(client.options.intents).has('GUILD_VOICE_STATES')) {
+        if (!new IntentsBitField(client.options.intents).has('GuildVoiceStates')) {
             throw new Error('GUILD_VOICE_STATES intent is required to use this package!');
         }
 
